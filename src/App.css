@@ -1,0 +1,376 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+body {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+nav{
+  height: 5rem;
+}
+
+.my-class {
+  font-family: "Fredericka the Great", serif;
+  font-weight: 500;
+  font-size: 1.5rem; /* Adjusted for better scaling */
+  padding-left: 10px;
+}
+.Aboutme {
+  font-family: "Fredericka the Great", serif;
+  font-weight: 350;
+  font-size: 8rem; 
+  padding-left: 10px;
+  padding-top: 10px;
+  color: #e9e5e5;
+
+}
+
+.Conainer {
+  display: flex;
+  flex-wrap: wrap; /* Allow content to wrap on smaller screens */
+  justify-content: center; 
+  gap: 20px; 
+  padding: 15px;
+  /* margin-top: 10rem; */
+}
+
+.my-about {
+  margin: 20px;
+  text-align: center; 
+}
+
+.my-about h1 {
+  font-size: 2rem; 
+  margin-bottom: 15px;
+}
+
+.my-about-p {
+  max-width: 600px; 
+  margin: 0 auto;
+  padding: 10px;
+}
+
+
+.parentDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.childdiv{
+  justify-content: center;
+}
+
+.icons {
+  margin-top: 1rem;
+}
+
+i{
+  font-size: 2rem;
+  
+}
+
+.icons i {
+  font-size: 20px; 
+  margin: 10px 0 0 5px;
+  color: #666;
+}
+
+i:hover {
+  color: rgb(24, 176, 203);
+}
+.round-image{
+  overflow: hidden;
+  width: 25rem; 
+  height: 25rem; 
+  border-radius: 50%; 
+  object-fit: cover; 
+  border: 1px  solid rgb(9, 206, 255);
+}
+.round-image-Planguages{
+  overflow: hidden;
+  width: fit-content; 
+  height: 15rem; 
+  
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  /* Tablet screens */
+  .my-about h1 {
+    font-size: 1.8rem;
+  }
+
+  .my-about-p {
+    font-size: 1rem;
+  }
+
+  .round-image{
+    overflow: hidden;
+    width: 30rem; 
+    height: 30rem; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    border: 1px  solid rgb(9, 206, 255);
+  }
+
+  .icons i {
+    font-size: 25px;
+  }
+  .Aboutme h1{
+    font-family: "Fredericka the Great", serif;
+    font-weight: 400;
+    font-size: 4rem; 
+    padding-left: 10px;
+    padding-top: 20px;
+  
+  }
+
+  .Conainer {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 20px; 
+    padding: 20px;
+    margin-top: 3rem;
+  }
+
+  
+}
+
+@media (max-width: 780px) {
+  .parentDiv .card{
+    display: block;
+    justify-content: center;
+    align-items: center;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .my-about{
+    justify-content: center;
+    align-items: center;
+  }
+  /* Mobile screens */
+  .my-about h1 {
+    font-size: 1.5rem;
+  }
+
+  .my-about-p {
+    font-size: 0.9rem;
+  }
+
+  .round-image{
+    overflow: hidden;
+    width: 15rem; 
+    height: 15rem; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    border: 1px  solid rgb(9, 206, 255);
+    justify-content: center;
+  }
+
+  .icons i {
+    font-size: 20px;
+  }
+  .Aboutme {
+    font-family: "Fredericka the Great", serif;
+    font-weight: 400;
+    font-size: 2rem; /* Adjusted for better scaling */
+    padding-left: 10px;
+    padding-top: 20px;
+  
+  }
+  .Conainer {
+    display: flex;
+    flex-wrap: wrap; /* Allow content to wrap on smaller screens */
+    justify-content: center; 
+    gap: 20px; 
+    padding: 0 20px 20px 20px;
+    
+  }
+  .slides{
+    flex-wrap: wrap;
+    
+  }
+  
+}
+
+
+.menu-toggle {
+  /* display: flex;               */
+  /* align-items: center;  */
+  padding-left: 90%;   
+   
+}
+
+.mdHidden{
+  background-color: transparent;
+  padding-left: 0;
+
+
+}
+nav .flex {
+  display: flex;
+  align-items:end; 
+  justify-content: space-between; 
+ 
+}
+
+
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;            
+  }
+}
+
+/* General Container Styling */
+.container {
+  max-width: 768px;
+  margin: auto;
+  padding: 90px;
+}
+
+/* Form Styling */
+form {
+  box-shadow: 0px 4px 6px rgb(2, 248, 248);
+  border-radius: 10px;
+  padding: 50px;
+}
+
+/* Input and Textarea Styling */
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+input,textarea{
+  background-color: #666;
+
+}
+input:focus,
+textarea:focus {
+  border-color: #00a6ff;
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.844);
+  outline: none;
+  
+}
+
+/* Button Styling */
+.buttonContactPage {
+  background-color: rgba(51, 122, 173, 0.467);
+  /* box-shadow: 0 0 10px rgba(0, 229, 255, 0.844); */
+  color: white;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #2989f0;
+}
+
+/* Header and Paragraph Styling */
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.pOfContactPage {
+  text-align: center;
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 24px;
+}
+.slides {
+  display: flex;
+  flex-wrap: nowrap; /* No wrapping on large screens */
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  max-width: 50%;
+  margin: 0 auto;
+  
+}
+
+@media (max-width: 768px) {
+  .slides {
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    flex-direction: column; /* Stack slides vertically */
+    justify-content: center;
+    align-items: center;
+  }
+}
+.technical, .FrameWork {
+  display: inline-block;
+  flex-direction: column; /* Ensure consistent stacking of content */
+  align-items: center;
+  text-align: center;
+  width: 30%; /* Adjust for a three-column layout on larger screens */
+  /* margin: 10px; */
+  flex: 0 1 30%; 
+  margin: 0; 
+  /* height: 5rem; */
+  
+}
+
+@media (max-width: 768px) {
+  .technical, .FrameWork {
+    width: 100%; 
+    .technical, .FrameWork {
+      flex: 0 1 80%;
+  }
+}
+}
+
+
+/* Media Queries for responsive resizing */
+@media (max-width: 768px) {
+  .round-image-Planguages {
+    width: 20rem; /* Smaller width for tablet screens */
+    height: 20rem; /* Adjust height proportionally */
+  }
+}
+
+@media (max-width: 480px) {
+  .round-image-Planguages {
+    width:fit-content; 
+    height: 15rem; /* Maintain proportional height */
+    overflow: hidden;
+  }
+}
+@media (max-width: 480px) {
+  .round-image-Planguages {
+    width:fit-content; 
+    height: 15rem; /* Maintain proportional height */
+    overflow: hidden;
+  }
+}
+
+.area h3{
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: larger;
+  color: #1cc1d4;
+}
+.area p{
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  color: #bac1c2;
+}
+
+
