@@ -13,10 +13,10 @@ const ContactBook = () => {
     setIsSubmitting(true);
 
     emailjs.sendForm(
-      'service_s3bg1gz',     // Your EmailJS service ID
-      'template_nm6r28t',    // Your EmailJS template ID
+      'service_19200',     // Your EmailJS service ID
+      'template_19200',    // Your EmailJS template ID
       formRef.current,
-      'oWe64n7o-X4AcwTxS'    // Your EmailJS public key
+      'tT49sH8G1VQYWJHh2'    // Your EmailJS public key
     )
     .then(() => {
       alert('Thank you for your message! I will get back to you soon.');

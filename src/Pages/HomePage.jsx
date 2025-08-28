@@ -11,7 +11,7 @@ const HomePage = () => {
   const { isDark } = useTheme();
   const navigate = useNavigate();
 
-  const skills = ['Python', 'JavaScript', 'React.js', 'C++', 'PHP', 'SQL'];
+  const skills = ['Python', 'JavaScript', 'React.js', 'C++', 'SQL','Node.js'];
 
   useEffect(() => {
     setIsVisible(true);
@@ -107,7 +107,7 @@ const HomePage = () => {
             <div className="space-y-3 sm:space-y-4">
               <div className="flex items-center space-x-2 sm:space-x-4 flex-wrap">
                 <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-400 rounded-full animate-pulse"></div>
-                <span className={`text-sm sm:text-base ${isDark ? 'text-gray-300' : 'text-gray-800'}`}>Engineering solutions using</span>
+                <span className={`text-sm sm:text-base ${isDark ? 'text-gray-300' : 'text-gray-800'}`}>Developing solutions using</span>
                 <span className="text-blue-400 font-semibold text-base sm:text-lg">
                   {skills[currentSkill]}
                 </span>

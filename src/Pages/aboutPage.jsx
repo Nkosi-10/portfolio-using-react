@@ -55,7 +55,7 @@ const AboutPage = () => {
             <p className={`mb-4 leading-relaxed text-sm sm:text-base ${
               isDark ? 'text-gray-200' : 'text-gray-700'
             }`}>
-              I am a passionate System developer and IT student with expertise in modern Systems, database management and software engineering. I love building innovative solutions and learning new things every day.
+              I am a passionate System developer and IT student with expertise in modern Systems, database management and software engineering. I love building innovative solutions.
             </p>
             <div className="flex flex-wrap gap-1.5 sm:gap-2 mt-2">
               {skills.map(skill => (

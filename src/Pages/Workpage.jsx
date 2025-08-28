@@ -10,30 +10,27 @@ const Workpage = () => {
   const projects = [
     {
       title: 'Brains-Tech AI',
-      description: 'An AI web based AI, Using google Gemini API.',
-      tech: ['Vanilla JavaScript', 'HTML', 'CSS'],
+      description: "Brains-Tech AI Chatbot is a modern web-based chatbot application powered by Google's Gemini API, featuring a responsive interface with real-time messaging, image upload capabilities, emoji picker integration. The project implements a complete chat system with a beautiful UI that supports both text and image interactions.",
+      tech: ['Vanilla JavaScript','Node.js', 'HTML', 'CSS'],
       image: img4,
-      live: '#',
-      github: '#',
-      Demo: '#'
+      live: 'https://chat-bot-phi-ten.vercel.app/',
+      github: 'https://github.com/Nkosi-10/Brains-Tech-ai'
     },
     {
       title: 'AI-Powered Password Cracker',
       description: 'A comprehensive educational tool that shows various password cracking techniques in a safe, controlled environment. It features a hacker-themed interface and AI-powered decision-making capabilities.',
-      tech: ['Flask', 'Bootstrap', 'JavaScript'],
+      tech: ['Flask','AI/ML', 'Bootstrap', 'JavaScript'],
       image: imgSs,
-      live: '#',
-      github: '#',
-      Demo: '#' // no demo available
+      live: 'https://ai-powered-password-cracker-1.onrender.com/',
+      github: 'https://github.com/Nkosi-10/ai-powered-password-cracker'
     },
     {
       title: 'Game: Skate Ball Smash',
-      description: 'A simple game where you have to smash the ball to score points.',
+      description: 'Skate Ball Smash is a modern HTML5 breakout game with a skateboard theme, featuring 10 progressive levels with unique block patterns, dynamic ball physics and power-ups. The game includes responsive design for both desktop and mobile, visual aiming system, particle effects and a combo scoring system.',
       tech: ['JavaScript', 'HTML', 'CSS'],
       image: imgKk,
-      live: '#',
-      github: '#',
-      Demo: '#' // no demo available
+      live: 'https://bounce-ball-game-blue.vercel.app/',
+      github: 'https://github.com/Nkosi-10/bounce-ball-game'
     }
   ];
 
@@ -111,19 +108,6 @@ const Workpage = () => {
                   Code
                 </a>
 
-                {/* Demo */}
-                <a
-                  href={project.Demo || '#'}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`flex items-center justify-center gap-1 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg text-white font-semibold text-xs shadow transition-all duration-200 hover:scale-105 ${project.Demo
-                      ? 'bg-green-600 hover:bg-green-700'
-                      : 'bg-gray-400 cursor-not-allowed hover:scale-100'
-                    }`}
-                >
-                  <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4" />
-                  Demo
-                </a>
               </div>
             </div>
           ))}

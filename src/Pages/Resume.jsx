@@ -262,8 +262,8 @@ const Resume = () => {
             textAlign: 'justify'
           }}>
             Software Developer and IT student with expertise in full-stack development, database management, and web technologies. 
-            Proficient in Python, JavaScript, C++, and PHP with experience in React.js, SQL, and modern development tools. 
-            Strong problem-solving skills and experience in software testing and debugging. Seeking software development opportunities.
+            Proficient in Python, JavaScript, C++ and PHP with experience in React.js, SQL, Node.js and modern development tools. 
+            Strong problem-solving skills and experience in debugging. Seeking software development opportunities.
           </p>
         </div>
 
@@ -321,7 +321,7 @@ const Resume = () => {
               color: isDark ? '#e0e0e0' : '#2d3748',
               fontSize: windowWidth <= 768 ? '0.75rem' : '0.9rem'
             }}>
-              Relevant Coursework: Software Development, Database Management, Web Programming, System Analysis, Cloud Computing
+              Relevant Coursework: Software Development, Database Management, Web Programming, Cloud Computing
             </div>
           </div>
         </div>
@@ -633,7 +633,7 @@ const Resume = () => {
                 Frameworks & Libraries
               </h3>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: windowWidth <= 768 ? '4px' : '8px', justifyContent: 'center' }}>
-                {['React.js', 'Node.js', 'Express.js', 'Tailwind CSS', 'Tkinter', 'NumPy', 'Bootstrap'].map((skill, index) => (
+                {['React.js', 'Node.js', 'Tailwind CSS', 'Tkinter', 'NumPy', 'Bootstrap'].map((skill, index) => (
                   <span key={skill} style={{
                     background: 'linear-gradient(45deg, #c0c0c0, #a0a0a0)',
                     color: '#333',
@@ -666,7 +666,7 @@ const Resume = () => {
                 Databases & Tools
               </h3>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: windowWidth <= 768 ? '4px' : '8px', justifyContent: 'center' }}>
-                {['MySQL', 'SQLite', 'MongoDB', 'Git', 'GitHub', 'VS Code', 'Postman'].map((skill, index) => (
+                {['MySQL', 'SQLite', 'Git', 'GitHub', 'VS Code', 'Linux'].map((skill, index) => (
                   <span key={skill} style={{
                     background: 'linear-gradient(45deg, #0080ff, #0066cc)',
                     color: 'white',
