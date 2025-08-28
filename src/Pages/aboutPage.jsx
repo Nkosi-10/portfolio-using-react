@@ -24,7 +24,7 @@ const AboutPage = () => {
             <div className="absolute -inset-2 rounded-full bg-gradient-to-tr from-blue-500 via-purple-500 to-blue-500 blur-lg opacity-60 animate-spin-slow"></div>
             <img
               src={image2}
-              alt="Nathi's Image"
+              alt="Nkosi Khumalo"
               className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 object-cover object-top rounded-full border-4 border-blue-400/40 shadow-xl relative z-10"
               style={{ background: '#222' }}
             />

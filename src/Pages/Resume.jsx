@@ -328,9 +328,9 @@ const Resume = () => {
 
         {/* Technical Knowledge Section */}
         <div style={{ 
-          marginBottom: '25px',
+          marginBottom: windowWidth <= 768 ? '15px' : '25px',
           background: isDark ? 'rgba(0, 128, 255, 0.05)' : 'rgba(0, 128, 255, 0.02)',
-          padding: '20px',
+          padding: windowWidth <= 768 ? '12px' : '20px',
           borderRadius: '15px',
           border: isDark ? '1px solid rgba(0, 128, 255, 0.2)' : '1px solid rgba(0, 128, 255, 0.1)',
           position: 'relative',
@@ -346,21 +346,21 @@ const Resume = () => {
             animation: 'scanLine 3s linear infinite'
           }}></div>
           <h2 style={{ 
-            fontSize: '1.2rem', 
+            fontSize: windowWidth <= 768 ? '1rem' : '1.2rem', 
             color: '#0080ff', 
             margin: '0 0 15px 0',
             fontWeight: 'bold',
             textTransform: 'uppercase',
-            letterSpacing: '2px',
+            letterSpacing: windowWidth <= 768 ? '1px' : '2px',
             textShadow: isDark ? '0 0 10px rgba(0, 128, 255, 0.5)' : '0 0 5px rgba(0, 128, 255, 0.3)'
           }}>
             TECHNICAL KNOWLEDGE
           </h2>
           <ul style={{ 
-            fontSize: '0.95rem', 
+            fontSize: windowWidth <= 768 ? '0.8rem' : '0.95rem', 
             lineHeight: '1.6',
             margin: '0',
-            paddingLeft: '20px',
+            paddingLeft: windowWidth <= 768 ? '15px' : '20px',
             color: isDark ? '#e0e0e0' : '#2d3748'
           }}>
             <li style={{ 
@@ -401,9 +401,9 @@ const Resume = () => {
 
         {/* Projects Section */}
         <div style={{ 
-          marginBottom: '25px',
+          marginBottom: windowWidth <= 768 ? '15px' : '25px',
           background: isDark ? 'rgba(0, 128, 255, 0.05)' : 'rgba(0, 128, 255, 0.02)',
-          padding: '20px',
+          padding: windowWidth <= 768 ? '12px' : '20px',
           borderRadius: '15px',
           border: isDark ? '1px solid rgba(0, 128, 255, 0.2)' : '1px solid rgba(0, 128, 255, 0.1)',
           position: 'relative',
@@ -419,33 +419,33 @@ const Resume = () => {
             animation: 'scanLine 3s linear infinite'
           }}></div>
           <h2 style={{ 
-            fontSize: '1.2rem', 
+            fontSize: windowWidth <= 768 ? '1rem' : '1.2rem', 
             color: '#0080ff', 
-            margin: '0 0 20px 0',
+            margin: windowWidth <= 768 ? '0 0 15px 0' : '0 0 20px 0',
             fontWeight: 'bold',
             textTransform: 'uppercase',
-            letterSpacing: '2px',
+            letterSpacing: windowWidth <= 768 ? '1px' : '2px',
             textShadow: isDark ? '0 0 10px rgba(0, 128, 255, 0.5)' : '0 0 5px rgba(0, 128, 255, 0.3)'
           }}>
             TECHNICAL PROJECTS
           </h2>
           
-          <div style={{ marginBottom: '20px' }}>
+          <div style={{ marginBottom: windowWidth <= 768 ? '15px' : '20px' }}>
             <div style={{
               background: isDark ? 'rgba(0, 128, 255, 0.1)' : 'rgba(0, 128, 255, 0.05)',
-              padding: '15px',
+              padding: windowWidth <= 768 ? '10px' : '15px',
               borderRadius: '10px',
               border: isDark ? '1px solid rgba(0, 128, 255, 0.3)' : '1px solid rgba(0, 128, 255, 0.2)',
-              marginBottom: '15px'
+              marginBottom: windowWidth <= 768 ? '10px' : '15px'
             }}>
               <h3 style={{ 
-                fontSize: '1rem', 
+                fontSize: windowWidth <= 768 ? '0.9rem' : '1rem', 
                 color: isDark ? '#ffffff' : '#1a202c', 
-                margin: '0 0 10px 0',
+                margin: windowWidth <= 768 ? '0 0 8px 0' : '0 0 10px 0',
                 fontWeight: 'bold',
                 display: 'flex',
                 alignItems: 'center',
-                gap: '10px'
+                gap: windowWidth <= 768 ? '8px' : '10px'
               }}>
                 <span style={{
                   width: '8px',
@@ -457,33 +457,33 @@ const Resume = () => {
                 School Registration System (Python, Tkinter, SQLite)
               </h3>
               <ul style={{ 
-                fontSize: '0.9rem', 
+                fontSize: windowWidth <= 768 ? '0.8rem' : '0.9rem', 
                 lineHeight: '1.5',
                 margin: '0',
-                paddingLeft: '20px',
+                paddingLeft: windowWidth <= 768 ? '15px' : '20px',
                 color: isDark ? '#e0e0e0' : '#2d3748'
               }}>
-                <li style={{ marginBottom: '5px' }}>Developed GUI-based application for student registration and database storage using Python and Tkinter</li>
-                <li style={{ marginBottom: '5px' }}>Implemented dynamic forms, user input validation, and SQLite database integration</li>
-                <li style={{ marginBottom: '5px' }}>Utilized object-oriented programming principles and database management techniques</li>
+                <li style={{ marginBottom: windowWidth <= 768 ? '3px' : '5px' }}>Developed GUI-based application for student registration and database storage using Python and Tkinter</li>
+                <li style={{ marginBottom: windowWidth <= 768 ? '3px' : '5px' }}>Implemented dynamic forms, user input validation, and SQLite database integration</li>
+                <li style={{ marginBottom: windowWidth <= 768 ? '3px' : '5px' }}>Utilized object-oriented programming principles and database management techniques</li>
               </ul>
             </div>
             
             <div style={{
               background: isDark ? 'rgba(0, 128, 255, 0.1)' : 'rgba(0, 128, 255, 0.05)',
-              padding: '15px',
+              padding: windowWidth <= 768 ? '10px' : '15px',
               borderRadius: '10px',
               border: isDark ? '1px solid rgba(0, 128, 255, 0.3)' : '1px solid rgba(0, 128, 255, 0.2)',
-              marginBottom: '15px'
+              marginBottom: windowWidth <= 768 ? '10px' : '15px'
             }}>
               <h3 style={{ 
-                fontSize: '1rem', 
+                fontSize: windowWidth <= 768 ? '0.9rem' : '1rem', 
                 color: isDark ? '#ffffff' : '#1a202c', 
-                margin: '0 0 10px 0',
+                margin: windowWidth <= 768 ? '0 0 8px 0' : '0 0 10px 0',
                 fontWeight: 'bold',
                 display: 'flex',
                 alignItems: 'center',
-                gap: '10px'
+                gap: windowWidth <= 768 ? '8px' : '10px'
               }}>
                 <span style={{
                   width: '8px',
@@ -495,33 +495,33 @@ const Resume = () => {
                 Disaster Relief Resource Management (C++)
               </h3>
               <ul style={{ 
-                fontSize: '0.9rem', 
+                fontSize: windowWidth <= 768 ? '0.8rem' : '0.9rem', 
                 lineHeight: '1.5',
                 margin: '0',
-                paddingLeft: '20px',
+                paddingLeft: windowWidth <= 768 ? '15px' : '20px',
                 color: isDark ? '#e0e0e0' : '#2d3748'
               }}>
-                <li style={{ marginBottom: '5px' }}>Built console application for resource management with CRUD operations (Create, Read, Update, Delete)</li>
-                <li style={{ marginBottom: '5px' }}>Implemented file I/O operations, data persistence and input validation</li>
-                <li style={{ marginBottom: '5px' }}>Applied software engineering principles including error handling and data integrity</li>
+                <li style={{ marginBottom: windowWidth <= 768 ? '3px' : '5px' }}>Built console application for resource management with CRUD operations (Create, Read, Update, Delete)</li>
+                <li style={{ marginBottom: windowWidth <= 768 ? '3px' : '5px' }}>Implemented file I/O operations, data persistence and input validation</li>
+                <li style={{ marginBottom: windowWidth <= 768 ? '3px' : '5px' }}>Applied software engineering principles including error handling and data integrity</li>
               </ul>
             </div>
             
             <div style={{
               background: isDark ? 'rgba(0, 128, 255, 0.1)' : 'rgba(0, 128, 255, 0.05)',
-              padding: '15px',
+              padding: windowWidth <= 768 ? '10px' : '15px',
               borderRadius: '10px',
               border: isDark ? '1px solid rgba(0, 128, 255, 0.3)' : '1px solid rgba(0, 128, 255, 0.2)',
-              marginBottom: '15px'
+              marginBottom: windowWidth <= 768 ? '10px' : '15px'
             }}>
               <h3 style={{ 
-                fontSize: '1rem', 
+                fontSize: windowWidth <= 768 ? '0.9rem' : '1rem', 
                 color: isDark ? '#ffffff' : '#1a202c', 
-                margin: '0 0 10px 0',
+                margin: windowWidth <= 768 ? '0 0 8px 0' : '0 0 10px 0',
                 fontWeight: 'bold',
                 display: 'flex',
                 alignItems: 'center',
-                gap: '10px'
+                gap: windowWidth <= 768 ? '8px' : '10px'
               }}>
                 <span style={{
                   width: '8px',
@@ -533,15 +533,15 @@ const Resume = () => {
                 Jobs for Software Engineers (React, Tailwind CSS, JSON)
               </h3>
               <ul style={{ 
-                fontSize: '0.9rem', 
+                fontSize: windowWidth <= 768 ? '0.8rem' : '0.9rem', 
                 lineHeight: '1.5',
                 margin: '0',
-                paddingLeft: '20px',
+                paddingLeft: windowWidth <= 768 ? '15px' : '20px',
                 color: isDark ? '#e0e0e0' : '#2d3748'
               }}>
-                <li style={{ marginBottom: '5px' }}>Developed responsive job portal web application using React.js and modern CSS frameworks</li>
-                <li style={{ marginBottom: '5px' }}>Implemented dynamic content management with JSON data and RESTful API concepts</li>
-                <li style={{ marginBottom: '5px' }}>Focused on user experience optimization and frontend performance</li>
+                <li style={{ marginBottom: windowWidth <= 768 ? '3px' : '5px' }}>Developed responsive job portal web application using React.js and modern CSS frameworks</li>
+                <li style={{ marginBottom: windowWidth <= 768 ? '3px' : '5px' }}>Implemented dynamic content management with JSON data and RESTful API concepts</li>
+                <li style={{ marginBottom: windowWidth <= 768 ? '3px' : '5px' }}>Focused on user experience optimization and frontend performance</li>
               </ul>
             </div>
           </div>
@@ -549,9 +549,9 @@ const Resume = () => {
 
         {/* Technical Skills Section */}
         <div style={{ 
-          marginBottom: '25px',
+          marginBottom: windowWidth <= 768 ? '15px' : '25px',
           background: isDark ? 'rgba(0, 128, 255, 0.05)' : 'rgba(0, 128, 255, 0.02)',
-          padding: '20px',
+          padding: windowWidth <= 768 ? '12px' : '20px',
           borderRadius: '15px',
           border: isDark ? '1px solid rgba(0, 128, 255, 0.2)' : '1px solid rgba(0, 128, 255, 0.1)',
           position: 'relative',
@@ -567,12 +567,12 @@ const Resume = () => {
             animation: 'scanLine 3s linear infinite'
           }}></div>
           <h2 style={{ 
-            fontSize: '1.2rem', 
+            fontSize: windowWidth <= 768 ? '1rem' : '1.2rem', 
             color: '#0080ff', 
-            margin: '0 0 20px 0',
+            margin: windowWidth <= 768 ? '0 0 15px 0' : '0 0 20px 0',
             fontWeight: 'bold',
             textTransform: 'uppercase',
-            letterSpacing: '2px',
+            letterSpacing: windowWidth <= 768 ? '1px' : '2px',
             textShadow: isDark ? '0 0 10px rgba(0, 128, 255, 0.5)' : '0 0 5px rgba(0, 128, 255, 0.3)'
           }}>
             TECHNICAL SKILLS
@@ -580,8 +580,8 @@ const Resume = () => {
           
           <div style={{
             display: 'grid',
-            gridTemplateColumns: windowWidth <= 768 ? 'repeat(auto-fit, minmax(250px, 1fr))' : 'repeat(auto-fit, minmax(300px, 1fr))',
-            gap: windowWidth <= 768 ? '15px' : '20px'
+            gridTemplateColumns: windowWidth <= 768 ? '1fr' : 'repeat(auto-fit, minmax(300px, 1fr))',
+            gap: windowWidth <= 768 ? '10px' : '20px'
           }}>
             {/* Programming Languages */}
             <div style={{

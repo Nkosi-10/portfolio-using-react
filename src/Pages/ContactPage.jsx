@@ -1,29 +1,32 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useTheme } from '../context/ThemeContext';
+import emailjs from '@emailjs/browser';
 import '../App.css';
 
 const ContactBook = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
+  const formRef = useRef();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { isDark } = useTheme();
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add your form submission logic here
-    // For now, we'll just show a success message
-    alert('Thank you for your message! I will get back to you soon.');
-    setFormData({ name: '', email: '', message: '' });
+    setIsSubmitting(true);
+
+    emailjs.sendForm(
+      'service_s3bg1gz',     // Your EmailJS service ID
+      'template_nm6r28t',    // Your EmailJS template ID
+      formRef.current,
+      'oWe64n7o-X4AcwTxS'    // Your EmailJS public key
+    )
+    .then(() => {
+      alert('Thank you for your message! I will get back to you soon.');
+      formRef.current.reset();
+    })
+    .catch((err) => {
+      console.error('EmailJS Error:', err);
+      alert('Oops! Something went wrong. Please try again.');
+    })
+    .finally(() => setIsSubmitting(false));
   };
 
   return (
@@ -130,75 +133,71 @@ const ContactBook = () => {
           }`}>
             Contact Me
           </h2>
-          <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
+          <form ref={formRef} onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
             <div>
               <label htmlFor="name" className={`block mb-1 sm:mb-2 text-xs sm:text-sm font-medium ${
                 isDark ? 'text-gray-200' : 'text-gray-700'
-              }`}>
-                Name:
-              </label>
+              }`}>Name:</label>
               <input 
                 type="text" 
                 id="name"
                 name="name"
-                value={formData.name}
-                onChange={handleChange}
+                placeholder="Your Name"
+                required
                 className={`w-full px-3 sm:px-4 py-2 sm:py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300 text-xs sm:text-sm ${
                   isDark 
                     ? 'bg-gray-800 border-gray-600 text-white placeholder-gray-400' 
                     : 'bg-white border-gray-300 text-gray-900 placeholder-gray-500'
                 }`}
-                placeholder="Your Name"
-                required
               />
             </div>
+
             <div>
               <label htmlFor="email" className={`block mb-1 sm:mb-2 text-xs sm:text-sm font-medium ${
                 isDark ? 'text-gray-200' : 'text-gray-700'
-              }`}>
-                Email:
-              </label>
+              }`}>Email:</label>
               <input 
                 type="email" 
                 id="email"
                 name="email"
-                value={formData.email}
-                onChange={handleChange}
+                placeholder="Your Email"
+                required
                 className={`w-full px-3 sm:px-4 py-2 sm:py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300 text-xs sm:text-sm ${
                   isDark 
                     ? 'bg-gray-800 border-gray-600 text-white placeholder-gray-400' 
                     : 'bg-white border-gray-300 text-gray-900 placeholder-gray-500'
                 }`}
-                placeholder="Your Email"
-                required
               />
             </div>
+
             <div>
               <label htmlFor="message" className={`block mb-1 sm:mb-2 text-xs sm:text-sm font-medium ${
                 isDark ? 'text-gray-200' : 'text-gray-700'
-              }`}>
-                Message:
-              </label>
+              }`}>Message:</label>
               <textarea 
                 id="message"
                 name="message"
-                value={formData.message}
-                onChange={handleChange}
                 rows="3"
+                placeholder="Your Message"
+                required
                 className={`w-full px-3 sm:px-4 py-2 sm:py-3 border rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300 text-xs sm:text-sm ${
                   isDark 
                     ? 'bg-gray-800 border-gray-600 text-white placeholder-gray-400' 
                     : 'bg-white border-gray-300 text-gray-900 placeholder-gray-500'
                 }`}
-                placeholder="Your Message"
-                required
               ></textarea>
             </div>
+
             <button 
               type="submit" 
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 sm:py-3 rounded-lg font-semibold transition-colors duration-300 transform hover:scale-105 text-sm sm:text-base"
+              disabled={isSubmitting}
+              className={`w-full py-2 sm:py-3 rounded-lg font-semibold transition-all duration-300 text-sm sm:text-base ${
+                isSubmitting 
+                  ? 'bg-gray-400 cursor-not-allowed' 
+                  : 'bg-blue-600 hover:bg-blue-700 hover:scale-105'
+              } text-white`}
             >
-              Send Message
+              {isSubmitting ? 'Sending...' : 'Send Message'}
             </button>
           </form>
         </div>
@@ -208,3 +207,4 @@ const ContactBook = () => {
 };
 
 export default ContactBook;
+

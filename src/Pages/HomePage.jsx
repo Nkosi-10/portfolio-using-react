@@ -1,12 +1,15 @@
 import { useState, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import mphileImage from '../assets/mphile.jpg';
 import { useTheme } from '../context/ThemeContext';
 
 const HomePage = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [currentSkill, setCurrentSkill] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
   const { isDark } = useTheme();
+  const navigate = useNavigate();
 
   const skills = ['Python', 'JavaScript', 'React.js', 'C++', 'PHP', 'SQL'];
 
@@ -15,13 +18,33 @@ const HomePage = () => {
     const interval = setInterval(() => {
       setCurrentSkill((prev) => (prev + 1) % skills.length);
     }, 2000);
-    return () => clearInterval(interval);
+
+    // Check if mobile screen
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener('resize', checkMobile);
+    };
   }, [skills.length]);
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleButtonClick = () => {
+    if (isMobile) {
+      navigate('/Resume');
+    } else {
+      scrollToSection('contact');
     }
   };
 
@@ -110,7 +133,7 @@ const HomePage = () => {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <button
-                onClick={() => scrollToSection('contact')}
+                onClick={handleButtonClick}
                 className={`group relative overflow-hidden px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-white transition-all duration-300 transform hover:scale-105 ${
                   isDark 
                     ? 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700' 
@@ -118,7 +141,7 @@ const HomePage = () => {
                 }`}
               >
                 <span className="relative z-10 flex items-center space-x-2">
-                  <span>Get In Touch</span>
+                  <span>{isMobile ? 'See Resume' : 'Get In Touch'}</span>
                   <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:translate-x-1" />
                 </span>
               </button>

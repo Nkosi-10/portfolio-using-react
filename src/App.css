@@ -215,7 +215,7 @@ i:hover {
 }
 nav .flex {
   display: flex;
-  align-items:end; 
+  align-items: flex-end; 
   justify-content: space-between; 
  
 }
@@ -328,11 +328,9 @@ h1 {
 
 @media (max-width: 768px) {
   .technical, .FrameWork {
-    width: 100%; 
-    .technical, .FrameWork {
-      flex: 0 1 80%;
+    width: 100%;
+    flex: 0 1 80%;
   }
-}
 }
 
 
@@ -344,13 +342,7 @@ h1 {
   }
 }
 
-@media (max-width: 480px) {
-  .round-image-Planguages {
-    width:fit-content; 
-    height: 15rem; /* Maintain proportional height */
-    overflow: hidden;
-  }
-}
+/* duplicate block removed below */
 @media (max-width: 480px) {
   .round-image-Planguages {
     width:fit-content; 

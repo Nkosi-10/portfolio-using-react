@@ -18,43 +18,14 @@ const Navbar = () => {
   const navigate = useNavigate();
   const { isDark, toggleTheme } = useTheme();
   const navbarRef = React.useRef(null);
-  const [isScrolled, setIsScrolled] = React.useState(false);
-  const [isMobile, setIsMobile] = React.useState(false);
-
-  // Check if device is mobile
-  React.useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-
-  // Handle scroll detection for mobile logo visibility
-  React.useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      setIsScrolled(scrollTop > 10);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   const handleNavClick = (link) => {
+    console.log('Nav click:', link);
+    
     if (link.to === '/Resume') {
       navigate('/Resume');
     } else if (link.sectionId) {
+      // For section scrolling, ensure we're on the home page first
       if (location.pathname !== '/') {
         navigate('/');
         // Wait for navigation to complete, then scroll
@@ -77,11 +48,14 @@ const Navbar = () => {
   };
 
   const isActive = (link) => {
-    if (link.to === '/Resume') return location.pathname === '/Resume';
+    if (link.to === '/Resume') {
+      return location.pathname === '/Resume';
+    }
+    
     if (link.sectionId && location.pathname === '/') {
-      const el = document.getElementById(link.sectionId);
-      if (el) {
-        const rect = el.getBoundingClientRect();
+      const element = document.getElementById(link.sectionId);
+      if (element) {
+        const rect = element.getBoundingClientRect();
         return rect.top <= 100 && rect.bottom >= 100;
       }
     }
@@ -100,13 +74,8 @@ const Navbar = () => {
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            {/* Logo - Hidden on mobile when scrolled */}
-            <Link 
-              className={`flex items-center transition-all duration-300 ${
-                isMobile && isScrolled ? 'opacity-0 pointer-events-none' : 'opacity-100'
-              }`} 
-              to="/"
-            >
+            {/* Logo */}
+            <Link className="flex items-center" to="/">
               <img className="h-8 w-auto" src={favicon} alt="Logo" />
               <span className={`ml-2 font-bold tracking-wide ${isDark ? 'text-white' : 'text-gray-900'}`}>
                 Brains-Tech
@@ -138,13 +107,12 @@ const Navbar = () => {
               <button
                 onClick={toggleTheme}
                 aria-label={`Switch to ${isDark ? 'light' : 'dark'} mode`}
-                className={`p-2 rounded-lg transition-all duration-200 transform hover:scale-105 active:scale-95 ${isDark ? 'text-gray-200 hover:text-blue-400 hover:bg-gray-800/30' : 'text-gray-700 hover:text-blue-600 hover:bg-gray-100/50'} focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2`}
+                className={`p-2 rounded-lg transition-all duration-200 ${isDark ? 'text-gray-200 hover:bg-gray-800/50' : 'text-gray-700 hover:bg-gray-100'} focus:outline-none focus:ring-2 focus:ring-blue-500`}
               >
                 {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
               </button>
             </div>
           </div>
-
         </div>
       </nav>
 
@@ -155,4 +123,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
